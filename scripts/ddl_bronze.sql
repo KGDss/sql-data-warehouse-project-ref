@@ -27,7 +27,7 @@ cst_create_dt DATE
 DO $$
 BEGIN
     IF EXISTS (SELECT 1 FROM pg_tables WHERE schemaname = 'bronze' AND tablename = 'crm_prd_info') THEN
-        DROP TABLE bronze.prd_info;
+        DROP TABLE bronze.crm_prd_info;
     END IF;
 END $$;
 CREATE TABLE bronze.crm_prd_info (
@@ -43,7 +43,7 @@ prd_end_dt DATE
 DO $$
 BEGIN
     IF EXISTS (SELECT 1 FROM pg_tables WHERE schemaname = 'bronze' AND tablename = 'crm_sales_details') THEN
-        DROP TABLE bronze.sales_details;
+        DROP TABLE bronze.crm_sales_details;
     END IF;
 END $$;
 CREATE TABLE bronze.crm_sales_details (
