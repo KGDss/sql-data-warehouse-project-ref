@@ -26,11 +26,11 @@ cst_create_dt DATE
 
 DO $$
 BEGIN
-    IF EXISTS (SELECT 1 FROM pg_tables WHERE schemaname = 'bronze' AND tablename = 'prd_info') THEN
+    IF EXISTS (SELECT 1 FROM pg_tables WHERE schemaname = 'bronze' AND tablename = 'crm_prd_info') THEN
         DROP TABLE bronze.prd_info;
     END IF;
 END $$;
-CREATE TABLE bronze.prd_info (
+CREATE TABLE bronze.crm_prd_info (
 prd_id INT,
 prd_key VARCHAR(50),
 prd_nm VARCHAR(50),
@@ -42,11 +42,11 @@ prd_end_dt DATE
 
 DO $$
 BEGIN
-    IF EXISTS (SELECT 1 FROM pg_tables WHERE schemaname = 'bronze' AND tablename = 'sales_details') THEN
+    IF EXISTS (SELECT 1 FROM pg_tables WHERE schemaname = 'bronze' AND tablename = 'crm_sales_details') THEN
         DROP TABLE bronze.sales_details;
     END IF;
 END $$;
-CREATE TABLE bronze.sales_details (
+CREATE TABLE bronze.crm_sales_details (
 sls_ord_num VARCHAR(50),
 sls_prd_key VARCHAR(50),
 sls_cust_id INT,
