@@ -19,9 +19,9 @@ cst_id INT,
 cst_key VARCHAR(50),
 cst_firstname VARCHAR(50),
 cst_lastname VARCHAR(50),
-cst_material_status VARCHAR(50),
+cst_marital_status VARCHAR(50),
 cst_gndr VARCHAR(50),
-cst_create_dt DATE
+cst_create_date DATE
 );
 
 DO $$
@@ -36,8 +36,8 @@ prd_key VARCHAR(50),
 prd_nm VARCHAR(50),
 prd_cost INT,
 prd_line VARCHAR(50),
-prd_create_dt DATE,
-prd_end_dt DATE
+prd_create_date DATE,
+prd_end_date DATE
 );
 
 DO $$
@@ -50,9 +50,9 @@ CREATE TABLE bronze.crm_sales_details (
     sls_ord_num  VARCHAR(50),
     sls_prd_key  VARCHAR(50),
     sls_cust_id  INT,
-    sls_order_dt INT,
-    sls_ship_dt  INT,
-    sls_due_dt   INT,
+    sls_order_date INT,
+    sls_ship_date  INT,
+    sls_due_date   INT,
     sls_sales    INT,
     sls_quantity INT,
     sls_price    INT

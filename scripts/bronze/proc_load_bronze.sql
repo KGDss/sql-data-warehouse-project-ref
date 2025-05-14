@@ -34,7 +34,7 @@ BEGIN
     RAISE NOTICE '>> Truncating Table: bronze.crm_cust_info';
     TRUNCATE TABLE bronze.crm_cust_info;
     RAISE NOTICE '>> Inserting Data Into: bronze.crm_cust_info';
-    COPY bronze.crm_cust_info (cst_id, cst_key, cst_firstname, cst_lastname, cst_material_status, cst_gndr, cst_create_dt)
+    COPY bronze.crm_cust_info (cst_id, cst_key, cst_firstname, cst_lastname, cst_marital_status, cst_gndr, cst_create_date)
     FROM '/Users/nicki/Desktop/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
     DELIMITER ',' 
     CSV HEADER;
@@ -42,7 +42,7 @@ BEGIN
     RAISE NOTICE '>> Truncating Table: bronze.crm_prd_info';
     TRUNCATE TABLE bronze.crm_prd_info;
     RAISE NOTICE '>> Inserting Data Into: bronze.crm_prd_info';
-    COPY bronze.crm_prd_info (prd_id, prd_key, prd_nm, prd_cost, prd_line, prd_create_dt, prd_end_dt)
+    COPY bronze.crm_prd_info (prd_id, prd_key, prd_nm, prd_cost, prd_line, prd_create_date, prd_end_date)
     FROM '/Users/nicki/Desktop/sql-data-warehouse-project/datasets/source_crm/prd_info.csv'
     DELIMITER ',' 
     CSV HEADER;
@@ -50,7 +50,7 @@ BEGIN
     RAISE NOTICE '>> Truncating Table: bronze.crm_sales_details';
     TRUNCATE TABLE bronze.crm_sales_details;
     RAISE NOTICE '>> Inserting Data Into: bronze.crm_sales_details';
-    COPY bronze.crm_sales_details (sls_ord_num, sls_prd_key, sls_cust_id, sls_order_dt, sls_ship_dt, sls_due_dt, sls_sales, sls_quantity, sls_price)
+    COPY bronze.crm_sales_details (sls_ord_num, sls_prd_key, sls_cust_id, sls_order_date, sls_ship_date, sls_due_date, sls_sales, sls_quantity, sls_price)
     FROM '/Users/nicki/Desktop/sql-data-warehouse-project/datasets/source_crm/sales_details.csv'
     DELIMITER ',' 
     CSV HEADER;
@@ -89,7 +89,7 @@ BEGIN
         RAISE WARNING 'Error Message: %', SQLERRM;
         RAISE WARNING 'Error State: %', SQLSTATE;
         RAISE NOTICE '=========================================================';
-  END --TRY
+  END; --TRY
 END;
-$$;s
+$$;
 
