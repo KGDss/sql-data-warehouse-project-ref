@@ -42,7 +42,7 @@ BEGIN
     RAISE NOTICE '>> Truncating Table: bronze.crm_prd_info';
     TRUNCATE TABLE bronze.crm_prd_info;
     RAISE NOTICE '>> Inserting Data Into: bronze.crm_prd_info';
-    COPY bronze.crm_prd_info (prd_id, prd_key, prd_nm, prd_cost, prd_line, prd_create_date, prd_end_date)
+    COPY bronze.crm_prd_info (prd_id, prd_key, prd_nm, prd_cost, prd_line, prd_start_date, prd_end_date)
     FROM '/Users/nicki/Desktop/sql-data-warehouse-project/datasets/source_crm/prd_info.csv'
     DELIMITER ',' 
     CSV HEADER;

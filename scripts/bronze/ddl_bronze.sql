@@ -36,7 +36,7 @@ prd_key VARCHAR(50),
 prd_nm VARCHAR(50),
 prd_cost INT,
 prd_line VARCHAR(50),
-prd_create_date DATE,
+prd_start_date DATE,
 prd_end_date DATE
 );
 
